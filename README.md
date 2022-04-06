@@ -5,7 +5,9 @@ This is a Node.js Cypress project created for the "Cypress Tutorial" of "Automat
 **How to initialize**:
 
 1- Install `Node JS` and ensure of installation by `node -v` and `npm -v`
+
 2- Open project
+
 3- Run `npm install package.json` in terminal (Dir to project root)
 
 AutomationCamp YT Channel: https://www.youtube.com/automationcamp
