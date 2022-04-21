@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://www.qatools.ro/test-hover.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <style>
+        :root {
+            --menu1-color: blue;
+            --menu2-color: indianred;
+        }
+        hr{
+            height: 2px;
+            border-width: 0;
+        }
+        #menu1{
+            color: var(--menu1-color);
+        }
+        #menu1 hr{
+            background-color: var(--menu1-color);;
+        }
+        #menu2{
+            color: var(--menu2-color);
+        }
+        #menu2 hr{
+            background-color: var(--menu2-color);
+        }
+        #menu2:hover .buttons-wrapper{
+            opacity: 1;
+        }
+        span{
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        .buttons-wrapper{
+            opacity: 0;
+        }
+    </style>
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1005.0" data-gr-ext-installed=""><div id="hebbia_popup_outer" class="hebbia_closed" style="display: none; top: 30px; left: 1383px;"><div></div></div>
+
+<h1>Test Hover</h1>
+
+<br>
+
+<div id="menu1" onmouseover="setOpacity(1)" onmouseout="setOpacity(0)">
+    <hr>
+    <span>Menu1</span>
+    <span class="buttons-wrapper" style="opacity: 0;">
+          <span id="left11">&lt;</span>
+          <span id="right12">&gt;</span>
+        </span>
+    <hr>
+</div>
+
+<br><br>
+
+<div id="menu2">
+    <hr>
+    <span>Menu2</span>
+    <span class="buttons-wrapper">
+          <span id="left21">&lt;</span>
+          <span id="right22">&gt;</span>
+        </span>
+    <hr>
+</div>
+
+<script>
+    const setOpacity = opacity =>
+        document.querySelector('#menu1 .buttons-wrapper').style.opacity = opacity;
+
+    const addMenuButtons = () =>
+        document.querySelectorAll('[id^=menu]').forEach(
+            (menuElement, index) => menuElement.innerHTML = `
+       <hr>
+       <span>Menu${index + 1}</span>
+       <span class="buttons-wrapper">
+          <span id="left${index + 1}1">&lt;</span>
+          <span id="right${index + 1}2">&gt;</span>
+        </span>
+       <hr>
+    `);
+
+    addMenuButtons();
+</script>
+
+
+</body></html>
