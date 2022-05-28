@@ -77,7 +77,7 @@ describe('Session 7', function () {
 
         })
     });
-    it.only('Web Table 2: Using array', function () {
+    it('Web Table 2: Using array', function () {
         cy.visit('https://www.play2.automationcamp.ir/index.html')
         cy.scrollTo('bottom')
         let list = []
