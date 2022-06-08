@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/mmonfared/automationcamp-cypress#readme",
   "devDependencies": {
-    "cypress": "^9.6.0"
+    "cypress": "^10.0.2"
   },
   "dependencies": {
     "cypress-real-events": "^1.7.0",
