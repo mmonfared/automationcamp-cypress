@@ -23,3 +23,28 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('openLinkWithText', (linkText) => {
+
+    cy.get('a').contains(linkText).click()
+})
+
+Cypress.Commands.add('getText', { prevSubject: true}, ($element) => {
+    // prevSubject: [true, false, 'optional', 'element', 'window', 'document']
+    return cy.wrap($element).invoke('text')
+})
+
+Cypress.Commands.add('getTextOptional', { prevSubject: 'optional'}, (subject) => {
+    if (subject) {
+        return cy.wrap(subject).invoke('text')
+    } else {
+        cy.get('h1').then(function ($el){
+            return $el.text()
+        })
+    }
+})
+
+Cypress.Commands.add('UseListOfPreviousSubjects', { prevSubject: ['element', 'window', 'document'] }, ($element) => {
+    // prevSubject: [true, false, 'optional', 'element', 'window', 'document']
+    return cy.wrap($element).invoke('text')
+})
