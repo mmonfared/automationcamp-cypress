@@ -1,7 +1,7 @@
 {
   "name": "automationcamp-cypress",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a Node.js Cypress project created for the \"Cypress Tutorial\" of \"AutomationCamp\" YouTube channel and will update during the session.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,14 +11,14 @@
     "url": "git+https://github.com/mmonfared/automationcamp-cypress.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mohammad Monfared",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mmonfared/automationcamp-cypress/issues"
   },
   "homepage": "https://github.com/mmonfared/automationcamp-cypress#readme",
   "devDependencies": {
-    "cypress": "^10.8.0"
+    "cypress": "^12.2.0"
   },
   "dependencies": {
     "cypress-real-events": "^1.7.0",
