@@ -20,7 +20,7 @@ describe('Session 13', function (){
     })
     it('Invoke to remove target', function(){
         cy.visit('https://www.play1.automationcamp.ir/multi_window.html')
-        cy.get("#window1").invoke('removeAttr', 'target').invoke('c')
+        cy.get("#window1").invoke('removeAttr', 'target')
         cy.get("#window1").click()
         
     })
