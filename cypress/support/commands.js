@@ -48,3 +48,31 @@ Cypress.Commands.add('UseListOfPreviousSubjects', { prevSubject: ['element', 'wi
     // prevSubject: [true, false, 'optional', 'element', 'window', 'document']
     return cy.wrap($element).invoke('text')
 })
+
+Cypress.Commands.add('loginUsingUI', (email, password) => {
+    cy.session(email, () => {
+        cy.visit("https://app.clockify.me/en/login")
+        cy.get("input#email").type(email)
+        cy.get("input#password").type(password)
+        cy.get("button[type=submit]").click()
+        cy.location('pathname').should('eq','/tracker')
+    })
+})
+
+Cypress.Commands.add('loginUsingAPI', (email, password) => {
+    cy.session(email, () => {
+        cy.request('POST', 'https://global.api.clockify.me/auth/token', 
+        {email: email, password: password})
+        .then(($resp) => {
+            expect($resp.status).to.eq(200)
+            window.localStorage.clear()
+            window.localStorage.setItem('token', $resp.body.token)
+    })
+    }, {cacheAcrossSpecs: true})
+})
+
+Cypress.Commands.add('logout', () => {
+    // window.localStorage.clear()
+    // cy.window().clearLocalStorage()
+    cy.clearLocalStorage()
+})
