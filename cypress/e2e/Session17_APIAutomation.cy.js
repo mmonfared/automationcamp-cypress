@@ -7,7 +7,7 @@ describe('Session17_ApiAutomation', () => {
             expect($response.body[0].capital[0]).eq('Berlin')
         })
         })
-    it.only('API-Chaining', function (){
+    it('API-Chaining', function (){
         cy.request('https://restcountries.com/v3.1/name/australia').then(($response) => {
             expect($response.status).to.eq(200)
             let countryCurrencyKey = Object.keys($response.body[0]["currencies"])

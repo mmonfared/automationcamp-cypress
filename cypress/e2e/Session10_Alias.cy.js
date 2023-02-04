@@ -36,7 +36,7 @@ describe('session10-Aliases - 3- Intercept()', function () {
     });
 });
 
-describe.only('session10-Aliases - 4 - Request()', function () {
+describe('session10-Aliases - 4 - Request()', function () {
     it('4- Request()-1', function () {
         cy.request('GET', 'https://api.spacexdata.com/v3/missions').as('missions')
         cy.get('@missions').then(function (response){

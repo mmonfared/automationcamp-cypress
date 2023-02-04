@@ -24,7 +24,7 @@ describe('Session 13', function (){
         cy.get("#window1").click()
         
     })
-    it.only('Invoke a scroll function on window object', function(){
+    it('Invoke a scroll function on window object', function(){
         cy.visit("https://wikipedia.com")
         cy.wait(500)
         cy.window().invoke('scrollTo', 300,300)
