@@ -2,7 +2,7 @@
 
 // admin@automationcamp.ir
 // support@automationcamp.ir
-describe("Session 18 - Login with UI", function() { //38 seconds
+describe("Session 18 - Login by UI", function() { //38 seconds
     beforeEach(function(){
         cy.visit("https://app.clockify.me/en/login")
         cy.get("input#email").type("admin@automationcamp.ir")
@@ -23,7 +23,7 @@ describe("Session 18 - Login with UI", function() { //38 seconds
     })
 })
 
-describe("Session 18 - Login with API", function() {  //22 Seconds
+describe("Session 18 - Login by API", function() {  //22 Seconds
     beforeEach(function(){
         cy.request('POST', 'https://global.api.clockify.me/auth/token', 
         {email: "admin@automationcamp.ir", password: "123456"})
