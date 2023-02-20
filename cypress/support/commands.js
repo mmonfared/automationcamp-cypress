@@ -76,3 +76,11 @@ Cypress.Commands.add('logout', () => {
     // cy.window().clearLocalStorage()
     cy.clearLocalStorage()
 })
+
+Cypress.Commands.add('addProduct', (bookName) => {
+    cy.get('.product-title>a').each(($el, index, list) => {
+        if ($el.text().includes(bookName)) {
+            cy.get('.product-box-add-to-cart-button').eq(index).click()
+        }
+    })
+})
