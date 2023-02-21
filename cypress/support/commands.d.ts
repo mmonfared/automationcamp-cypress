@@ -19,6 +19,7 @@ declare namespace Cypress {
         loginUsingUI(email: string, password: string): Cypress.Chainable
         loginUsingAPI(email: string, password: string): Cypress.Chainable
         logout(): Cypress.Chainable
+        addProduct(bookName: string): Cypress.Chainable
     }
 }
 

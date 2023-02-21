@@ -90,7 +90,7 @@ describe('Session19-Intercept/Mock', () => {
             expect(req.response.body).to.have.ownProperty('id')
         })
     })
-    it.only("Mock (Stub network)", () => {
+    it("Mock (Stub network)", () => {
         cy.intercept('https://api.realworld.io/api/tags', 
             {"tags":["AutomationCamp", "Cypress"]}).as('reqAlias')
         cy.visit("https://angular.realworld.io/")
