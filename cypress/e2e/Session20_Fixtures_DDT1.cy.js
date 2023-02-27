@@ -1,6 +1,6 @@
 /// <reference types='cypress'/>
 
-describe('Session20', function () {
+describe('Session20_DataDriven1_Fixtures', function () {
     beforeEach( function () {
         cy.fixture('users.json').as('usersData')
         cy.fixture('books.json').as('booksData')

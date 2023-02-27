@@ -23,6 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+require('cypress-downloadfile/lib/downloadFileCommand')
 
 Cypress.Commands.add('openLinkWithText', (linkText) => {
 
@@ -83,4 +84,16 @@ Cypress.Commands.add('addProduct', (bookName) => {
             cy.get('.product-box-add-to-cart-button').eq(index).click()
         }
     })
+})
+
+Cypress.Commands.add('deleteFile', (filePath) => {
+    cy.task('deleteFileTask', filePath)
+})
+
+Cypress.Commands.add('deleteFolder', (folderPath) => {
+    cy.task('deleteFolderTask', folderPath)
+})
+
+Cypress.Commands.add('deleteDownloadsFolder', () => {
+    cy.task('deleteFolderTask', Cypress.config('downloadsFolder'))
 })

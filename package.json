@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/mmonfared/automationcamp-cypress#readme",
   "devDependencies": {
+    "cy-verify-downloads": "^0.1.13",
     "cypress": "^12.6.0",
-    "cypress-iframe": "^1.0.1"
+    "cypress-downloadfile": "^1.2.3",
+    "cypress-iframe": "^1.0.1",
+    "node-xlsx": "^0.21.0"
   },
   "dependencies": {
     "cypress-real-events": "^1.7.0",
