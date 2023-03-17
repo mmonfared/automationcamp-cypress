@@ -9,7 +9,7 @@ describe('Session 13', function (){
         cy.wrap(channel).its('channelName').should('eq', 'AutomationCamp')
     })
     it('Invoke to get text', function() {
-        cy.visit('https://www.play1.automationcamp.ir/forms.html')
+        cy.visit('https://play1.automationcamp.ir/forms.html')
         cy.get('#check_javascript').click()
         cy.get('#check_validate').invoke('text').should('eq', 'JAVASCRIPT')
         cy.get('#check_validate').invoke('text').should('not.eq', 'PYTHON')
@@ -19,7 +19,7 @@ describe('Session 13', function (){
         cy.get("#js-link-box-it").invoke('attr', 'href').should('eq', '//it.wikipedia.org/')
     })
     it('Invoke to remove target', function(){
-        cy.visit('https://www.play1.automationcamp.ir/multi_window.html')
+        cy.visit('https://play1.automationcamp.ir/multi_window.html')
         cy.get("#window1").invoke('removeAttr', 'target')
         cy.get("#window1").click()
         

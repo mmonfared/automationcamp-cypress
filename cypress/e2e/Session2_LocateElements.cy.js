@@ -2,7 +2,7 @@
 
 describe('Session 2', () => {
     it('1- Basic Syntax', () => {
-        cy.visit("https://www.play2.automationcamp.ir/index.html")
+        cy.visit("https://play2.automationcamp.ir/index.html")
         cy.get('#fname').type("Mohammad")
     })
     it("2- Auto Scroll", () => {
@@ -10,13 +10,13 @@ describe('Session 2', () => {
         cy.get(':nth-child(9) > :nth-child(9)').click()
     })
     it("3- Contains", () => {
-        cy.visit("https://www.play2.automationcamp.ir/index.html")
+        cy.visit("https://play2.automationcamp.ir/index.html")
         cy.contains('This is your form title:')
         cy.contains("label[for='moption']", " Option 2")
         cy.get("label[for='moption']").contains(" Option 2")
     })
     it("4- Relatives", () => {
-        cy.visit("https://www.play2.automationcamp.ir/index.html")
+        cy.visit("https://play2.automationcamp.ir/index.html")
         cy.get("#owc").children()
         cy.get("#owc").children("[value='option 2']").click()
         cy.contains("Singer").parent()
@@ -36,18 +36,18 @@ describe('Session 2', () => {
         })
     })
     it("7- Index", () => {
-        cy.visit("https://www.play2.automationcamp.ir/index.html")
+        cy.visit("https://play2.automationcamp.ir/index.html")
         cy.get("td").eq(5)
         cy.get("td").first()
         cy.get("td").last()
     })
     it("8- Filter", () => {
-        cy.visit("https://www.play2.automationcamp.ir/index.html")
+        cy.visit("https://play2.automationcamp.ir/index.html")
         cy.get("td").filter("#td_id")
         cy.get("td").not("#td_id")
     })
     it("9- Traversal", () => {
-        cy.visit("https://www.play2.automationcamp.ir/index.html")
+        cy.visit("https://play2.automationcamp.ir/index.html")
         cy.get("#fname").closest("div").should('have.class', 'main')
         cy.get("[value='td1_value']").next()
         cy.get("[value='td1_value']").nextAll()

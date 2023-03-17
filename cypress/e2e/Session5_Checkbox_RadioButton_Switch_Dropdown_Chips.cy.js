@@ -2,7 +2,7 @@
 
 describe('Session5', () => {
     it('1-Checkbox', function () {
-        cy.visit("https://www.play1.automationcamp.ir/forms.html")
+        cy.visit("https://play1.automationcamp.ir/forms.html")
         cy.get("#check_java").should("not.be.checked")
         cy.get("#check_java").check()
         cy.wait(500)
@@ -17,7 +17,7 @@ describe('Session5', () => {
         cy.get("#mat-slide-toggle-1-input").check({force: true}).should("be.checked")
     })
     it('4- Multiple Check()', function () {
-        cy.visit("https://www.play1.automationcamp.ir/forms.html")
+        cy.visit("https://play1.automationcamp.ir/forms.html")
         cy.wait(500)
         cy.get("input[type=checkbox]").check(['JAVA', 'PYTHON', 'JAVASCRIPT'])
 

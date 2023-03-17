@@ -13,7 +13,7 @@ describe('Session12 - Wrap', function () {
 
     it('Wrap yielded jQuery Objects', function () {
 
-        cy.visit('https://www.play2.automationcamp.ir')
+        cy.visit('https://play2.automationcamp.ir')
         cy.get("#fname").then(function($el){
             cy.wrap($el).type('AutomationCamp')
         })

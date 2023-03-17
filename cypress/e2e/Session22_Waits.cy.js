@@ -4,7 +4,7 @@
 
 describe('Explicit and Implicit waits', function () {
     beforeEach(function () {
-        cy.visit("https://www.play1.automationcamp.ir/expected_conditions.html")
+        cy.visit("https://play1.automationcamp.ir/expected_conditions.html")
     })
     it('Explicit Wait', function () {
         cy.get('#min_wait').clear().type(2)
@@ -31,7 +31,7 @@ describe('Explicit and Implicit waits', function () {
 
 describe('Change default timeout in describe level', { defaultCommandTimeout: 6000 }, function () {
     beforeEach(function () {
-        cy.visit("https://www.play1.automationcamp.ir/expected_conditions.html")
+        cy.visit("https://play1.automationcamp.ir/expected_conditions.html")
         cy.get('#min_wait').clear().type(5)
         cy.get('#max_wait').clear().type(5)
     })
@@ -47,7 +47,7 @@ describe('Change default timeout in describe level', { defaultCommandTimeout: 60
 
 describe('Change default timeout in test level', function () {
     beforeEach(function () {
-        cy.visit("https://www.play1.automationcamp.ir/expected_conditions.html")
+        cy.visit("https://play1.automationcamp.ir/expected_conditions.html")
     })
     it('Test with different timeout for its actions', { defaultCommandTimeout: 6000 }, function () {
         cy.get('#min_wait').clear().type(5)
@@ -76,7 +76,7 @@ describe('Change default timeout in "BEFORE" Hook', function () {
         Cypress.config('defaultCommandTimeout', 6000)
     })
     beforeEach(function () {
-        cy.visit("https://www.play1.automationcamp.ir/expected_conditions.html")
+        cy.visit("https://play1.automationcamp.ir/expected_conditions.html")
         cy.get('#min_wait').clear().type(5)
         cy.get('#max_wait').clear().type(5)
     })
@@ -92,7 +92,7 @@ describe('Change default timeout in "BEFORE" Hook', function () {
 
 describe('Wait for a condition', function () {
     beforeEach(function () {
-        cy.visit("https://www.play1.automationcamp.ir/expected_conditions.html")
+        cy.visit("https://play1.automationcamp.ir/expected_conditions.html")
         cy.get('#min_wait').clear().type(1)
         cy.get('#max_wait').clear().type(1)
     })
@@ -156,7 +156,7 @@ describe('Wait for page to be loaded', function() {
 })
 
 it('Call back on "should"', function () {
-    cy.visit('https://www.play1.automationcamp.ir/forms.html')
+    cy.visit('https://play1.automationcamp.ir/forms.html')
     cy.get('select#select_lang>option').should((items)=>{
         expect(items).to.have.length(4)
         expect(items[0]).to.have.text('Java')

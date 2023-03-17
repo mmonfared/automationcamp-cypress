@@ -1,7 +1,7 @@
 /// <reference type='cypress'/ >
 describe('session10-Aliases - 1- DOM elements', function () {
     it('1- DOM elements', function () {
-        cy.visit("https://www.play2.automationcamp.ir/index.html")
+        cy.visit("https://play2.automationcamp.ir/index.html")
         cy.get("#lname").as('lastNameElement')
         cy.reload()
         cy.get('@lastNameElement').type('Monfared')
@@ -10,7 +10,7 @@ describe('session10-Aliases - 1- DOM elements', function () {
 
 describe('session10-Aliases - 2- Sharing Variables', function () {
     before(function (){
-        cy.visit("https://www.play2.automationcamp.ir/index.html")
+        cy.visit("https://play2.automationcamp.ir/index.html")
     })
     beforeEach(function (){
         cy.fixture('data.json').as('dataFile')

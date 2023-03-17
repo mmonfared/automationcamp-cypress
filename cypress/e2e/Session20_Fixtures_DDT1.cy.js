@@ -8,14 +8,14 @@ describe('Session20_DataDriven1_Fixtures', function () {
 
     it('User 1 Fixture', function () {
         cy.log(JSON.stringify(this.usersData))
-        cy.visit('https://www.play2.automationcamp.ir/index.html')
+        cy.visit('https://play2.automationcamp.ir/index.html')
         cy.get("#fname").type(this.usersData.user1.firstName)
         cy.get("#lname").type(this.usersData["user1"]["lastName"])
         cy.get(`input#${this.usersData["user1"]["gender"]}`)
     })
     it('User 2 Fixture', function () {
         cy.log(JSON.stringify(this.usersData))
-        cy.visit('https://www.play2.automationcamp.ir/index.html')
+        cy.visit('https://play2.automationcamp.ir/index.html')
         cy.get("#fname").type(this.usersData.user2.firstName)
         cy.get("#lname").type(this.usersData["user2"]["lastName"])
         cy.get(`input#${this.usersData["user2"]["gender"]}`)
