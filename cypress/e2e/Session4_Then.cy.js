@@ -17,7 +17,7 @@ describe('Session4', function () {
         })
     });
     it('3- Assert text of input using then()', function () {
-        cy.visit("https://www.play2.automationcamp.ir/index.html")
+        cy.visit("https://play2.automationcamp.ir/index.html")
         cy.get("#fname").type("Cypress").then( (el) => {
             let input_value = el.val()
             expect(input_value).to.eq("Cypress")
@@ -72,7 +72,7 @@ describe('Session4', function () {
         reloadAndCheck()
     });
     it('6- Use for debugging', function () {
-        cy.visit("https://www.play2.automationcamp.ir/index.html")
+        cy.visit("https://play2.automationcamp.ir/index.html")
         cy.get("#fname").type("Cypress").then( (el) => {
             debugger
             let input_value = el.val()

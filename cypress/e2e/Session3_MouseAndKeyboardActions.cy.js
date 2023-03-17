@@ -49,7 +49,7 @@ describe('Session 3 - Keyboard Actions', function () {
 describe('Session3 - Mouse Actions', function () {
     it('1-Click / 2-Double Click / 3-Right Click', function () {
         // Click
-        cy.visit("https://www.play2.automationcamp.ir/index.html")
+        cy.visit("https://play2.automationcamp.ir/index.html")
         cy.get("input#male").click()
         cy.get("input#male").should('be.checked')
         // Double Click

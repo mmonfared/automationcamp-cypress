@@ -20,7 +20,7 @@ describe('Session21_DataDriven2_WorkWithFiles', function () {
         })
     })
     it('5- Read Excel', function () {
-        cy.visit('https://www.play2.automationcamp.ir/index.html')
+        cy.visit('https://play2.automationcamp.ir/index.html')
 
         cy.task('parseXlsx', {filePath: 'cypress/fixtures/users.xlsx'})
         .then((jsonData) => {
@@ -31,7 +31,7 @@ describe('Session21_DataDriven2_WorkWithFiles', function () {
     })
 
     it('6- Write to JSON', function () {
-        cy.visit('https://www.play2.automationcamp.ir/index.html')
+        cy.visit('https://play2.automationcamp.ir/index.html')
 
         cy.task('parseXlsx', {filePath: 'cypress/fixtures/users.xlsx'})
         .then((jsonData) => {
@@ -41,22 +41,22 @@ describe('Session21_DataDriven2_WorkWithFiles', function () {
         })
     })
     it('7- Download by click', function () {
-        cy.visit('https://www.play1.automationcamp.ir/forms.html')
+        cy.visit('https://play1.automationcamp.ir/forms.html')
         cy.get('#download_file').click()
         cy.verifyDownload('sample_text.txt')
         cy.readFile('cypress/downloads/sample_text.txt').should('include', 'by AutomationCamp')
     })
     it('8- Download by Link', function () {
-        cy.downloadFile('https://www.play1.automationcamp.ir/sample_text.txt', 'cypress/downloads/MyDownloads', 'MyText.txt')
+        cy.downloadFile('https://play1.automationcamp.ir/sample_text.txt', 'cypress/downloads/MyDownloads', 'MyText.txt')
         cy.readFile('cypress/downloads/MyDownloads/MyText.txt').should('include', 'by AutomationCamp')
     })
     it('9- Upload single', function () {
-        cy.visit("https://www.play1.automationcamp.ir/forms.html")
+        cy.visit("https://play1.automationcamp.ir/forms.html")
         cy.get("#upload_cv").selectFile("cypress/fixtures/books.json")
         cy.get("#validate_cv").should('have.text',"books.json")
     })
     it('10- Upload Multiple', function () {
-        cy.visit("https://www.play1.automationcamp.ir/forms.html")
+        cy.visit("https://play1.automationcamp.ir/forms.html")
         cy.get("#upload_files").selectFile([
             "cypress/fixtures/books.json",
             "cypress/fixtures/data.json"
@@ -65,12 +65,12 @@ describe('Session21_DataDriven2_WorkWithFiles', function () {
         cy.get("#validate_files").should('include.text', 'data.json')
     })
     it('11- Upload with dragNdrop', function () {
-        cy.visit("https://www.play1.automationcamp.ir/forms.html")
+        cy.visit("https://play1.automationcamp.ir/forms.html")
         cy.get("#upload_cv").selectFile("cypress/fixtures/books.json", {action: 'drag-drop'})
         cy.get("#validate_cv").should('have.text',"books.json")
     })
     it('12- Upload with changing the file attributes', function () {
-        cy.visit("https://www.play1.automationcamp.ir/forms.html")
+        cy.visit("https://play1.automationcamp.ir/forms.html")
         cy.get("#upload_cv").selectFile({
             contents: "cypress/fixtures/books.json",
             fileName: "automation.json",

@@ -27,7 +27,7 @@ describe('Session 7', function () {
         })
     });
     it('Web Table 1', function () {
-        cy.visit('https://www.play2.automationcamp.ir/index.html')
+        cy.visit('https://play2.automationcamp.ir/index.html')
         cy.scrollTo('bottom')
         cy.get('tr').then(function ($list) {
             cy.log($list.length)
@@ -48,7 +48,7 @@ describe('Session 7', function () {
         })
     })
     it('Web Table 2: Get specific cell value based on another cell value', function () {
-        cy.visit('https://www.play2.automationcamp.ir/index.html')
+        cy.visit('https://play2.automationcamp.ir/index.html')
         cy.scrollTo('bottom')
         // When we know about the index of Occupation
         cy.get('table').contains('Smith').parent().within(function () {
@@ -64,7 +64,7 @@ describe('Session 7', function () {
         })
     });
     it('Introduce wrap()', function () {
-        cy.visit('https://www.play2.automationcamp.ir/index.html')
+        cy.visit('https://play2.automationcamp.ir/index.html')
         cy.scrollTo('bottom')
         cy.get('tr').each(function ($row, index, $list) {
             if (index > 0) {
@@ -78,7 +78,7 @@ describe('Session 7', function () {
         })
     });
     it('Web Table 2: Using array', function () {
-        cy.visit('https://www.play2.automationcamp.ir/index.html')
+        cy.visit('https://play2.automationcamp.ir/index.html')
         cy.scrollTo('bottom')
         let list = []
         cy.get('tbody th').each(function ($el, index) {
