@@ -1,0 +1,23 @@
+<html>
+
+<body>
+    <main>
+        <h1>Handling application errors</h1>
+        <p>
+            Click on the button to cause application error
+            <button id="error">Throw an error</button>
+        </p>
+    </main>
+    <script>
+        document.getElementById('error').addEventListener('click', () => {
+            console.log('application will throw an error in 1 second')
+            setTimeout(() => {
+                console.log('application is about to throw an error')
+                // debugger
+                throw new Error('Things went bad')
+            }, 1000)
+        })
+    </script>
+</body>
+
+</html>

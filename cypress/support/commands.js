@@ -68,6 +68,7 @@ Cypress.Commands.add('loginUsingAPI', (email, password) => {
             expect($resp.status).to.eq(200)
             window.localStorage.clear()
             window.localStorage.setItem('token', $resp.body.token)
+            
     })
     }, {cacheAcrossSpecs: true})
 })

@@ -22,6 +22,7 @@
     "cypress": "^12.6.0",
     "cypress-downloadfile": "^1.2.3",
     "cypress-iframe": "^1.0.1",
+    "cypress-terminal-report": "^5.0.2",
     "node-xlsx": "^0.21.0"
   },
   "dependencies": {
