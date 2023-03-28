@@ -9,11 +9,12 @@ const { resolve } = require('path');
 module.exports = defineConfig({
   watchForFileChanges: false,
   e2e: {
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
     defaultCommandTimeout: 6000,
     setupNodeEvents(on, config) {
       // return require('./cypress/plugins/index.js')(on, config)
+      require('cypress-terminal-report/src/installLogsPrinter')(on, {
+        printLogsToConsole: "always",
+      });
       on("task", {
         parseXlsx({ filePath }) {
           return new Promise((resolve, reject) => {
