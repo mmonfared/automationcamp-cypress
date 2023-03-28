@@ -117,7 +117,7 @@ describe('Session 23 - Debug', () => {
         cy.wait(1500)
 
     })
-    it.only('10- Screenshot' , () => {
+    it('10- Screenshot' , () => {
         cy.visit('https://play1.automationcamp.ir/forms.html')
         cy.get('#check_java').click()
         cy.get('#check_validate').should('have.text', 'JAVA')
