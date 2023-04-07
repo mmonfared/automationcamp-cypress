@@ -1,0 +1,31 @@
+<html>
+  <body>
+    <h1 id="count">(..)</h1>
+    <button id="decrease">-</button>
+    <button id="increase">+</button>
+  </body>
+</html>
+
+<script>
+  const counterDisplayElem = document.querySelector('#count');
+  const counterMinusElem = document.querySelector('#decrease');
+  const counterPlusElem = document.querySelector('#increase');
+
+  let count = 0;
+
+  updateDisplay();
+
+  counterPlusElem.addEventListener('click', () => {
+    count++;
+    updateDisplay();
+  });
+
+  counterMinusElem.addEventListener('click', () => {
+    count--;
+    updateDisplay();
+  });
+
+  function updateDisplay() {
+    counterDisplayElem.innerHTML = count;
+  }
+</script>
