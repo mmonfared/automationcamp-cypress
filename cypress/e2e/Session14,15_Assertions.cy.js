@@ -92,7 +92,7 @@ describe('Session14 - Assertions', function (){
     })
     it('Timeout option 1', function (){
         cy.visit('https://play1.automationcamp.ir/expected_conditions.html')
-        cy.get('#max_wait').clear().type(5)
+        cy.get('#min_wait').clear().type(5)
         cy.get('#max_wait').clear().type(7)
         cy.get('#visibility_target').should('not.be.visible')
         cy.get('#visibility_trigger').click()
