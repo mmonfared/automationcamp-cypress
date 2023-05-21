@@ -21,7 +21,7 @@
     "@cypress/xpath": "^2.0.3",
     "@testing-library/cypress": "^9.0.0",
     "cy-verify-downloads": "^0.1.13",
-    "cypress": "^12.9.0",
+    "cypress": "^12.11.0",
     "cypress-downloadfile": "^1.2.3",
     "cypress-iframe": "^1.0.1",
     "cypress-plugin-api": "^2.11.0",
