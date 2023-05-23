@@ -1,10 +1,8 @@
 const { defineConfig } = require('cypress')
 const xlsx = require("node-xlsx").default;
 const fs = require("fs");
-const path = require("path");
 const { verifyDownloadTasks } = require('cy-verify-downloads');
 const {downloadFile} = require('cypress-downloadfile/lib/addPlugin');
-const { resolve } = require('path');
 
 module.exports = defineConfig({
   // chromeWebSecurity: false,
