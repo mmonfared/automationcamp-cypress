@@ -4,7 +4,10 @@
   "description": "This is a Node.js Cypress project created for the \"Cypress Tutorial\" of \"AutomationCamp\" YouTube channel and will update during the session.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:test": "cypress run --spec cypress/e2e/Session31.cy.js",
+    "cy:test:firefox": "cypress run --spec cypress/e2e/Session31.cy.js --browser firefox",
+    "cy:test:firefox:headed": "cypress run --spec cypress/e2e/Session31.cy.js --browser firefox --headed"
+
   },
   "repository": {
     "type": "git",
