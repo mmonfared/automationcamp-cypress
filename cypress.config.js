@@ -7,6 +7,9 @@ const {downloadFile} = require('cypress-downloadfile/lib/addPlugin');
 module.exports = defineConfig({
   // chromeWebSecurity: false,
   watchForFileChanges: false,
+  retries: {
+    runMode: 2
+  },
   e2e: {
     defaultCommandTimeout: 6000,
     setupNodeEvents(on, config) {
