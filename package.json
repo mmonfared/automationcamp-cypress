@@ -7,7 +7,6 @@
     "cy:test": "cypress run --spec cypress/e2e/Session31.cy.js",
     "cy:test:firefox": "cypress run --spec cypress/e2e/Session31.cy.js --browser firefox",
     "cy:test:firefox:headed": "cypress run --spec cypress/e2e/Session31.cy.js --browser firefox --headed"
-
   },
   "repository": {
     "type": "git",
@@ -30,6 +29,7 @@
     "cypress-plugin-api": "^2.11.0",
     "cypress-plugin-multiple-click": "^1.0.0",
     "cypress-terminal-report": "^5.0.2",
+    "mysql": "^2.18.1",
     "node-xlsx": "^0.21.0"
   },
   "dependencies": {

@@ -3,12 +3,21 @@ const xlsx = require("node-xlsx").default;
 const fs = require("fs");
 const { verifyDownloadTasks } = require('cy-verify-downloads');
 const {downloadFile} = require('cypress-downloadfile/lib/addPlugin');
+const mysql = require("mysql")
 
 module.exports = defineConfig({
   // chromeWebSecurity: false,
   watchForFileChanges: false,
   retries: {
     runMode: 2
+  },
+  "env": {
+    "db": {
+      server: "127.0.0.1",
+      user: "root",
+      password: "12345678",
+      database: "ac"
+    }
   },
   e2e: {
     defaultCommandTimeout: 6000,
@@ -54,6 +63,26 @@ module.exports = defineConfig({
           })
         })
       }})
+      on("task", {
+        queryDb: (query) => {
+          return queryOnDatabase (query, config)
+        }
+      })
     },
   },
 })
+
+function queryOnDatabase(query, config) {
+	const connection = mysql.createConnection(config.env.db)
+	connection.connect()
+	return new Promise((resolve, reject) => {
+		connection.query(query, (error, results) => {
+			if (error) reject(error)
+			else {
+				connection.end()
+				console.log(results)
+				return resolve(results)
+			}
+		})
+	})
+}
